@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}ReplOAuth{% endblock %}
+
+{% block content %}
+<h1>ReplOAuth</h1><br>
+<p>This application requests access to the user's GitHub profile and creates a 
+  repository with its own (application's) code. You can then learn more about it through its documentations
+in your github repository</p>
+
+{% if logged_in %}
+<div class="container">
+  <div class="card-deck mb-4 text-center">
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Replicate repo</h4>
+      </div>
+      <div class="card-body" id="card-replicate">
+        <form action="/replicate" method="post" class="form-signin" id="replicate">
+          <span style="font-size: 12px;">The replication process could take about 30 secs.</span>
+          <label for="replicateRepo" class="sr-only">Repository Name</label>
+          <input type="text" name="repo" id="repo" class="form-control repo" placeholder="Repository" required>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Replicate</button>
+        </form>
+        <div id="loader-replicate" class="loader-wrapper">
+          <div class="loader replicate"></div>
+        </div>
+        <div id="response-replicate"></div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+
+{% endif %}
+
+{% endblock %} 
