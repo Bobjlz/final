@@ -3,7 +3,7 @@ itsdangerous==0.24
 Jinja2==2.10.1
 MarkupSafe==1.0
 Werkzeug==0.15.3
-wheel==0.33.6
+wheel==0.38.1
 gunicorn==19.9.0
 Flask-OAuthlib==0.9.5
 PyGithub==1.43.8
